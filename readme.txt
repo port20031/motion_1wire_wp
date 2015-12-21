@@ -28,7 +28,12 @@ To add device types or changing the logic of the send an email : port20031@yande
 
 == Screenshots ==
 
+https://github.com/port20031/motion_1wire_wp/blob/master/screencapture1.png
+
+https://github.com/port20031/motion_1wire_wp/blob/master/screencapture2.png
+
 == Description ==
+
 Плагин реализует набор функций технологии "Умный дом".
 
 The plugin implements the functionality of technology "Smart House".
