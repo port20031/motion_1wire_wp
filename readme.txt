@@ -11,19 +11,33 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Displaying Motion (linux) and 1wire in Wordpress.
 
 == Description ==
-Данный плагин работает для устройств 1wire :
-DS18B20 (type 28) и DS2413 (type 3A)
+Плагин реализует набор функций технологии "Умный дом".
+The plugin implements the functionality of technology "Smart House".
+Он работает для устройств 1wire :
+DS18B20 (type 28) и DS2413 (type 3A).
 DS2413 настроен так :
 канал А - управляемый ключ ,
 канал В - отображает состояние ключа .
+
+Для добавления типов устройств или изменения логики работы пишите на email:port20031@yandex.ru
+To add device types or changing the logic of the send an email: port20031@yandex.ru
+
 Режим охраны заключается в превышении температуры выбираемого датчика или его повреждении.
 Возможно внешнее добавление сигнала тревоги через добавление строки в таблицу "префикс"_port20031_alarm 
+базы Wordpress.
 INSERT INTO `wp_port20031_alarm`( `type_id`) VALUES (1) - на пример .
+Пример из мотион :
+on_picture_save  echo "insert into security(camera, filename, frame, file_type, time_stamp, event_time_stamp) 
+values('%t', '%f', '%q', '%n', '%Y-%m-%d %T', '%C');" | mysql -uroot -p123456 motion;
+
+on_movie_start  echo "insert into security(camera, filename, frame, file_type, time_stamp, event_time_stamp) 
+values('%t', '%f', '%q', '%n', '%Y-%m-%d %T', '%C');" | mysql -uroot -p123456 motion;
+
 Оповещение идет на указанный в настройках email 3 раза.
 От кого и с какого адреса - системные настройки Wordpress ( можно реализовать через сторонние плагины ).
 Опрос датчиков происходит запуском шорт кода [port20031_cron] .
 Так же плагин реализует шорт коды для проектов motion (linux) , 
-Media Browser(http://mediabrowser.tv ), Plex (https://plex.tv/) 
+Media Browser(https://emby.media ), Plex (https://plex.tv/) 
 и формирование ссылок на сохраненные видео .  
 
 Описание работы шорткодов .
@@ -109,7 +123,8 @@ define('FS_METHOD', 'direct');
 ( или камер - больше камер , мощнее компьютер ))) ) , фото движения
 Плагин Folder Gallery для отображения фото из папки , доступной по веб 
 В крон положить скрипты перемещения  файлов  от результата работы мотион 
-пример для картинок (обратить внимание на используемые пути) :
+(обратить внимание на используемые пути и пользователя веб сервера) :
+пример для картинок 
 ./cron_move_files_motion.sh
 
 #!/bin/bash
