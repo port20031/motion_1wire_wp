@@ -3,12 +3,25 @@ Contributors: port20031
 Donate link: https://github.com/port20031/motion_1wire_wp
 Tags: 1wire , motion
 Requires at least: 3.0.1
-Tested up to: 4.1
+Tested up to: 4.4
 Stable tag: 4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Displaying Motion (linux) and 1wire in Wordpress.
+
+== Installation ==
+
+1.Upload the entire motion_1wire_wp folder to the /wp-content/plugins/ directory.
+2.Activate the plugin through the 'Plugins' menu in WordPress.
+3.You will find 'Motion 1Wire WP' menu in your WordPress admin panel - Options.
+
+For basic usage, you can also have a look at the plugin homepage.
+( https://github.com/port20031/motion_1wire_wp )
+== Frequently Asked Questions ==
+Для добавления типов устройств или изменения логики работы пишите на email:port20031@yandex.ru
+To add device types or changing the logic of the send an email: port20031@yandex.ru
+== Screenshots ==
 
 == Description ==
 Плагин реализует набор функций технологии "Умный дом".
@@ -18,9 +31,6 @@ DS18B20 (type 28) и DS2413 (type 3A).
 DS2413 настроен так :
 канал А - управляемый ключ ,
 канал В - отображает состояние ключа .
-
-Для добавления типов устройств или изменения логики работы пишите на email:port20031@yandex.ru
-To add device types or changing the logic of the send an email: port20031@yandex.ru
 
 Режим охраны заключается в превышении температуры выбираемого датчика или его повреждении.
 Возможно внешнее добавление сигнала тревоги через добавление строки в таблицу "префикс"_port20031_alarm 
