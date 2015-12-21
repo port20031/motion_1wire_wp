@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: port20031
-Donate link: http://example.com/
-Tags: linux , motion
+Donate link: https://github.com/port20031/motion_1wire_wp
+Tags: 1wire , motion
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 4.3
+Stable tag: 4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
