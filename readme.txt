@@ -12,13 +12,7 @@ Displaying Motion linux in Wordpress.
 
 == Description ==
 
-Displaying Motion linux in Wordpress.
-[port20031_motion_linux port="8085" width="1200" height="600"]
-<br><br><img src="http://ip_wordpress:8085" width="1200" height="600" /><br>
 
-Default:
-[port20031_motion_linux ]
-<br><br><img src="http://ip_wordpress:400" width="320" height="240" /><br>
 == Changelog ==
 
 = 1.0 =
