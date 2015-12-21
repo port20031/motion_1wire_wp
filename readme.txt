@@ -23,9 +23,8 @@ INSERT INTO `wp_port20031_alarm`( `type_id`) VALUES (1) - на пример .
 От кого и с какого адреса - системные настройки Wordpress ( можно реализовать через сторонние плагины ).
 Опрос датчиков происходит запуском шорт кода [port20031_cron] .
 Так же плагин реализует шорт коды для проектов motion (linux) , 
-Media Browser(http://mediabrowser.tv ), Plex (https://plex.tv/)   
-
-
+Media Browser(http://mediabrowser.tv ), Plex (https://plex.tv/) 
+и формирование ссылок на сохраненные видео .  
 
 Описание работы шорткодов .
 
