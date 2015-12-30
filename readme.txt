@@ -188,6 +188,23 @@ patch -Np1 -l -i owfs_libusb.patch
 
 /opt/owfs/bin/owhttpd -p 3001 -s localhost:3000
 
+vi /usr/lib/systemd/system/owserver.service
+
+[Unit]
+Description=Backend server for 1-wire control
+Documentation=man:owserver(1)
+After=syslog.target network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/owfs/bin/owserver -d /dev/ttyUSB0 -p 3000
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+
 
 Установка вордпрес.
 
