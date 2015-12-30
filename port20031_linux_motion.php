@@ -24,12 +24,87 @@ class port20031
 			add_shortcode('port20031_folder_video', array (&$this, 'folder_video') );
 			add_shortcode('port20031_cron', array (&$this, 'cron_job') );
 			add_shortcode('port20031_temperature', array (&$this, 'temperature') );
+			add_shortcode('port20031_status_key', array (&$this, 'status_key') );
 			add_action('admin_menu',  array (&$this, 'admin') );
 
 
       }
    }
+	function status_key( $atts,$content = null )
+	{
+		extract(shortcode_atts(array(
+      'id'=> '0',
+      ), $atts));
+      global $wpdb;
+      if($content == null or $content==' '  )
+		{
+			$content =__( "The key " ,"port20031");
+		}
 
+      $id = (int) $id;
+      $res='';
+		$table_name = $wpdb->prefix."port20031_name1wire";
+		$sql ="";
+		$namekey=$content;
+		$namekey1=__( "The key " ,"port20031");
+		$namekeyon=__( " on ." ,"port20031");
+		$namekeyoff=__( " off ." ,"port20031");
+		if( $id==0 )
+		{
+			//показываем состояния всех ключей
+			$sql ="SELECT id FROM ".$table_name." WHERE id_type=3  ;";
+		}
+		else
+		{
+			//показываем определенный ключ
+			$sql ="SELECT id FROM ".$table_name." WHERE id_type='3' AND `id`=".$id." ;";
+
+		}
+		//echo $sql;
+		$res=$wpdb->get_col($sql);
+		//print_r($res);
+		if( empty($res) )
+		{
+			//такого ключа нет
+			return  "<font color=\"blue\">".$namekey." ".$id." ".__("is not set .","port20031")."</font>";
+		}
+		else
+		{
+			//есть,показываем статус ключей
+			$html='';
+			for ($i = 0; $i <= (count($res))-1; $i++)
+  			{
+    			//$graf3=$graf3.'[' .($dats[$i]*1000+7200000) . ',' .$dats1[$i] . '],';
+    			$table_name1 = $wpdb->prefix."port20031_state_key";
+    			$sql1 ="SELECT state_real FROM ".$table_name1." WHERE key_id=" .$res[$i] . "  ;";
+    			//echo $sql1;
+    			$stkey = $wpdb->get_var($sql1);
+    			if(1==$stkey )
+    			{
+    				//key on
+    				$tempd=$res[$i];
+    				if( $namekey!=$namekey1 )
+    				{
+    					$tempd='';
+    				}
+    				$html=$html."<div><font color=\"green\">".$namekey." ".$tempd." "
+    				.$namekeyon."</font></div>";
+    			}
+    			else
+    			{
+    				//key off
+    				$tempd=$res[$i];
+    				if( $namekey!=$namekey1 )
+    				{
+    					$tempd='';
+    				}
+    				$html=$html."<div><font color=\"red\">".$namekey." ".$tempd." "
+    				.$namekeyoff."</font></div>";
+    			}
+  			}
+			return $html;
+		}
+	}
    function temperature($atts,$content = null)
    {
 		extract(shortcode_atts(array(
@@ -39,7 +114,7 @@ class port20031
       'date'=>'240',
       ), $atts));
       global $wpdb;
-      $id =  $id;
+      $id = (int) $id;
 		$port20031_portownet=get_option('port20031_portownet');
       //ищем имя по id и типу = 1
       $res='';
@@ -987,8 +1062,16 @@ if( $res0 )
    function admin_form()
    {
 		global $wpdb;
-		//wp_mail( "port2003@yandex.ru", "tema", "message",  );
 		$port20031_pathownet=get_option('port20031_pathownet');
+    	if( isset($_GET['del_job']) )
+    	{
+    		//echo 'del job<br>';
+    		$kk3=(int)$_GET['del_job'];
+    		$table_name = $wpdb->prefix . "port20031_job";
+    		$sql="DELETE FROM `" . $table_name . "` WHERE `id`=$kk3";
+    		$wpdb->query($sql);
+    		$this->cron_job(1);
+    	}
     	if ( isset($_GET['keyon']) or isset($_GET['keyoff']) )
     	{
     		//echo 'turn button<br>';
@@ -1128,8 +1211,8 @@ if( $res0 )
 			
     	}
 
-   /*
-   echo "<BR>";
+/*
+echo "<BR>";
 echo 'POST';
 echo "<BR>";
 echo "<pre>";
@@ -1143,6 +1226,7 @@ echo "<pre>";
 print_r($_GET);
 echo "</pre>";
 echo "<BR><BR>";
+
 */
     	//получаем список ключей
 
@@ -1151,19 +1235,8 @@ echo "<BR><BR>";
 
 
 		<div class='wrap'>
-			<h2><?php _e('Motion 1Wire WP Options', 'port20031'); ?></h2><br>
+			<h2><?php _e('Motion 1Wire WP Options', 'port20031'); ?></h2>
 
-<?php _e('Attention ! The button apply all keys and delete all schedules ( for test or by crash ).', 'port20031'); ?>
-
-
-
-<form action="./options-general.php">
-<input type="hidden" name="page" value="port20031_linux_motion" />
-<input type="hidden" name="keyoff"   value="off" />
-<button type="submit"><?php _e('Turn off everything', 'port20031'); ?></button>
-</form>
-
-<br>
 <form name="port20031" method="post"
 action="<?php echo $_SERVER['PHP_SELF']; ?>?page=port20031_linux_motion.php&amp;updated=true">
 			<!-- Имя port20031_form используется в check_admin_referer -->
@@ -1417,8 +1490,78 @@ action="<?php echo $_SERVER['PHP_SELF']; ?>?page=port20031_linux_motion.php&amp;
 			</p>
 			</form>
 		</div>
+<br>
 
+<?php _e('Attention ! The button apply all keys and delete all schedules ( for test or by crash ).', 'port20031'); ?>
+
+
+
+<form action="./options-general.php">
+<input type="hidden" name="page" value="port20031_linux_motion" />
+<input type="hidden" name="keyoff"   value="off" />
+<button type="submit"><?php _e('Turn off everything', 'port20031'); ?></button>
+</form>
+
+<br>
 	<?php
+
+echo _e('List of schedules.', 'port20031').'<br>';
+$table_name = $wpdb->prefix . "port20031_job";
+$sql="SELECT `schedulers`, `key_id`, `type_id`,  `temp_id`, `autostop_climate`, `time1`, `time2`, `job_data`,`id`
+FROM `" . $table_name . "`
+ORDER BY `key_id`,`type_id`; ";
+$res0= $wpdb->get_col($sql,0);
+$res1= $wpdb->get_col($sql,1);
+$res2=$wpdb->get_col($sql,2);
+$res3= $wpdb->get_col($sql,3);
+$res4=$wpdb->get_col($sql,4);
+$res5= $wpdb->get_col($sql,5);
+$res6=$wpdb->get_col($sql,6);
+$res7= $wpdb->get_col($sql,7);
+$res8= $wpdb->get_col($sql,8);
+if( $res0 )
+{
+	echo "
+	<table>
+
+	";
+	for ($i = 0; $i <= (count($res0))-1; $i++)
+  	{
+    	$table_name11 = $wpdb->prefix . "port20031_type_job";
+    	$sql12="SELECT `type_job` FROM `" . $table_name11 . "` WHERE `id`=$res2[$i] ";
+    	$kk1='
+    	<form action="./options-general.php">
+<input type="hidden" name="page" value="port20031_linux_motion" />
+<input type="hidden" name="del_job"   value="'.$res8[$i].'" />
+
+<button type="submit"  >'. __('Delete job','port20031') .'</button>
+</form>
+    	';
+    	$kk=$wpdb->get_var($sql12);
+    	echo "<tr><td>";
+		echo " ".$res0[$i]." => key ".$res1[$i]."=>".$kk."=> sensor temp ".$res3[$i]." => ".$res4[$i]." => ".$res5[$i]
+    	." => ".$res6[$i]." => ".$res7[$i]."</td><td>".$kk1."</td></tr>
+    	";
+
+   }
+   echo "</table>
+	";
+}
+echo _e('Status keys(id key=>program state=>real state):', 'port20031').'<br>';
+$table_name = $wpdb->prefix . "port20031_state_key";
+$sql="SELECT `key_id`, `state_program`, `state_real` FROM `" . $table_name . "` ORDER BY `key_id`";
+//SELECT `key_id`, `state_program`, `state_real` FROM `wp_port20031_state_key` ORDER BY `key_id`
+$res0= $wpdb->get_col($sql,0);
+$res1= $wpdb->get_col($sql,1);
+$res2=$wpdb->get_col($sql,2);
+//$res3= $wpdb->get_col($sql,3);
+if( $res0 )
+{
+	for ($i = 0; $i <= (count($res0))-1; $i++)
+  	{
+    	echo "".$res0[$i]."=>".$res1[$i]."=>".$res2[$i].'<br>';
+   }
+}
 //Types of devices
 echo _e('Types of devices (id-types of devices):', 'port20031').'<br>';
 $table_name = $wpdb->prefix . "port20031_type1wire";
@@ -1446,42 +1589,7 @@ if( $res0 )
     	echo "".$res0[$i]."=>".$res1[$i]."=>".$res2[$i].'<br>';
    }
 }
-echo _e('List of schedules.', 'port20031').'<br>';
-$table_name = $wpdb->prefix . "port20031_job";
-$sql="SELECT `schedulers`, `key_id`, `type_id`,  `temp_id`, `autostop_climate`, `time1`, `time2`, `job_data`
-FROM `" . $table_name . "`
-ORDER BY `key_id`,`type_id`; ";
-$res0= $wpdb->get_col($sql,0);
-$res1= $wpdb->get_col($sql,1);
-$res2=$wpdb->get_col($sql,2);
-$res3= $wpdb->get_col($sql,3);
-$res4=$wpdb->get_col($sql,4);
-$res5= $wpdb->get_col($sql,5);
-$res6=$wpdb->get_col($sql,6);
-$res7= $wpdb->get_col($sql,7);
-if( $res0 )
-{
-	for ($i = 0; $i <= (count($res0))-1; $i++)
-  	{
-    	echo "".$res0[$i]."=>".$res1[$i]."=>".$res2[$i]."=>".$res3[$i]."=>".$res4[$i]."=>".$res5[$i]
-    	."=>".$res6[$i]."=>".$res7[$i].'<br>';
-   }
-}
-echo _e('Status keys(id key=>program state=>real state):', 'port20031').'<br>';
-$table_name = $wpdb->prefix . "port20031_state_key";
-$sql="SELECT `key_id`, `state_program`, `state_real` FROM `" . $table_name . "` ORDER BY `key_id`";
-//SELECT `key_id`, `state_program`, `state_real` FROM `wp_port20031_state_key` ORDER BY `key_id`
-$res0= $wpdb->get_col($sql,0);
-$res1= $wpdb->get_col($sql,1);
-$res2=$wpdb->get_col($sql,2);
-//$res3= $wpdb->get_col($sql,3);
-if( $res0 )
-{
-	for ($i = 0; $i <= (count($res0))-1; $i++)
-  	{
-    	echo "".$res0[$i]."=>".$res1[$i]."=>".$res2[$i].'<br>';
-   }
-}
+
 
 echo _e('
 Attention ! To create a schedule, you must be sure to:<br>
