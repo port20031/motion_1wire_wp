@@ -188,6 +188,21 @@ patch -Np1 -l -i owfs_libusb.patch
 
 /opt/owfs/bin/owhttpd -p 3001 -s localhost:3000
 
+Send comand:
+lsusb
+
+Bus 001 Device 002: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
+
+Send comand:
+vi /etc/udev/rules.d/52-1wire.rules 
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct} =="6001", SYMLINK+="usbowfs", RUN+="/bin/systemctl restart owserver.service"
+
+Send comand:
+udevadm trigger
+
+
+Send comand:
 vi /usr/lib/systemd/system/owserver.service
 
 [Unit]
@@ -197,13 +212,17 @@ After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=/opt/owfs/bin/owserver -d /dev/ttyUSB0 -p 3000
+ExecStart=/opt/owfs/bin/owserver -d /dev/usbowfs -p 3000
 Restart=on-failure
 User=root
 Group=root
 
 [Install]
 WantedBy=multi-user.target
+
+Send comand:
+systemctl daemon-reload
+
 
 
 Установка вордпрес.
