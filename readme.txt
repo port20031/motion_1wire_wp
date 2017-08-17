@@ -279,6 +279,8 @@ qTranslate X (https://wordpress.org/plugins/qtranslate-x/)- перевод ст�
 
 Triagis® WordPress Security Evaluation  (https://wordpress.org/plugins/triagis-security-evaluation/)- безопасность
 
+All In One WP Security & Firewall - безопасность
+
 WP Lightbox 2 (https://wordpress.org/plugins/wp-lightbox-2/)- для отображения Folder Gallery и прочего .
 
 Login-Logout (https://wordpress.org/plugins/login-logout/)- виджет авторизации .
