@@ -277,6 +277,8 @@ MiwoFTP (https://wordpress.org/plugins/miwoftp/)- http://miwisoft.com/wordpress-
 
 qTranslate X (https://wordpress.org/plugins/qtranslate-x/)- перевод страниц на язык .
 
+Polylang (https://wordpress.org/plugins/polylang/ ) - перевод страниц на язык .
+
 chmod -R 777 /var/www/html/kassa
 find /var/www/html/kassa -type d -exec chmod 777 {} \;
 chown -R apache:apache /var/www/html/
