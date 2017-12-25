@@ -281,6 +281,20 @@ chmod -R 777 /var/www/html/kassa
 find /var/www/html/kassa -type d -exec chmod 777 {} \;
 chown -R apache:apache /var/www/html/
 
+Или
+
+chmod -R 777 /home/user/folder/*
+
+Или
+
+Чтобы установить права доступа только на директории, исключая содержащиеся в них файлы, используй:
+find /home/user/folder/ -type d -exec chmod 777 {} ;
+
+Аналогично для файлов:
+
+find /home/user/folder/ -type f -exec chmod 666 {} ; 
+
+
 Triagis® WordPress Security Evaluation  (https://wordpress.org/plugins/triagis-security-evaluation/)- безопасность
 
 All In One WP Security & Firewall - безопасность
