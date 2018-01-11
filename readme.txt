@@ -317,7 +317,7 @@ https://entrust.ssllabs.com/
 
 Плагин Analytics Cat специально заточен под Google Analytics
 Плагин Autoptimize 
-
+Скорость сайта https://developers.google.com/speed/pagespeed/insights/
 == Changelog ==
 
 = 1.0 =
