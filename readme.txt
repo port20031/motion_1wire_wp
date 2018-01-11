@@ -312,6 +312,11 @@ User Access Manager Private Extension (https://wordpress.org/plugins/user-access
 
 Rename wp-login.php (https://wordpress.org/plugins/rename-wp-login/)- переименование скрипта логина на сайт.
 
+Проверка ssl 
+https://entrust.ssllabs.com/
+
+Плагин Analytics Cat специально заточен под Google Analytics
+Плагин Autoptimize 
 
 == Changelog ==
 
