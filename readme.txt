@@ -318,6 +318,7 @@ https://entrust.ssllabs.com/
 Плагин Analytics Cat специально заточен под Google Analytics
 Плагин Autoptimize 
 Скорость сайта https://developers.google.com/speed/pagespeed/insights/
+Безопасность https://securityheaders.io/?q=ya.ru&followRedirects=on
 == Changelog ==
 
 = 1.0 =
