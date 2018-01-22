@@ -239,6 +239,20 @@ define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST'] . '/wm');
 
 define('FS_METHOD', 'direct');
 
+Nginx в папке ss
+
+location /ss {
+root /var/www/html/ ;
+index index.php;
+try_files $uri $uri/ /ss/index.php?$args; # permalinks
+location ~ /ss/(.+\.php)$ {
+    fastcgi_pass unix:/run/php/php7.1-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+    include snippets/fastcgi-php.conf;
+  }
+}
+
 
 Настройка мотион.
 
