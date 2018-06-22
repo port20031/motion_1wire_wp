@@ -330,6 +330,8 @@ Custom Login Page Customizer ( https://ru.wordpress.org/plugins/login-customizer
 
 Login Logout Shortcode (https://ru.wordpress.org/plugins/login-logout-shortcode/) - шорткод логина-выхода
 
+Login-Logout (https://ru.wordpress.org/plugins/login-logout/) - виджет логина пароля 
+
 WPFront User Role Editor (https://ru.wordpress.org/plugins/wpfront-user-role-editor/) - роли 
 
 Проверка ssl 
