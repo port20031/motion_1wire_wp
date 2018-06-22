@@ -326,6 +326,12 @@ User Access Manager Private Extension (https://wordpress.org/plugins/user-access
 
 Rename wp-login.php (https://wordpress.org/plugins/rename-wp-login/)- переименование скрипта логина на сайт.
 
+Custom Login Page Customizer ( https://ru.wordpress.org/plugins/login-customizer/ )- настройка входа на сайт
+
+Login Logout Shortcode (https://ru.wordpress.org/plugins/login-logout-shortcode/) - шорткод логина-выхода
+
+WPFront User Role Editor (https://ru.wordpress.org/plugins/wpfront-user-role-editor/) - роли 
+
 Проверка ssl 
 https://entrust.ssllabs.com/
 
