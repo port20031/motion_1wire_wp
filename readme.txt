@@ -341,6 +341,13 @@ https://entrust.ssllabs.com/
 Плагин Autoptimize 
 Скорость сайта https://developers.google.com/speed/pagespeed/insights/
 Безопасность https://securityheaders.io/?q=ya.ru&followRedirects=on
+
+ab -c 50 -n 10000 -f TLS1.2 -H "Accept-Encoding: gzip,deflate" https://somesite.com/
+Команда выполнила 10 000 запросов в 50 потоков и, кроме всего прочего, показала скорость и обработанное количество запросов:
+Requests per second — количество запросов в секунду. К примеру если страница состоит из 20 частей (CSS, картинки и HTML), то в нашем примере сервер способен обработать около 40 одновременных пользователей в секунду.
+Time per request (mean) — среднее время на выполнение группы параллельных запросов (в нашем случае 50);
+Time per request (mean, across all concurrent requests) — среднее время на выполнение одного запроса.
+
 == Changelog ==
 
 = 1.0 =
