@@ -1,0 +1,41 @@
+git init - создание локального репозитория
+git status - проверка статуса
+git checkout -b имя_ветки создание и переход на новую ветку
+git checkout  имя_ветки  - переход на ветку имя_ветки
+git add . - добавление файлов в коммит
+git commit -m "имя_коммита" сохранение комиита
+git remote add origin URL - добавление удаленного репозитория
+
+git pull origin имя_ветки стянуть проект с удаленной ветки
+git push origin имя_ветки залить изминения на удаленную ветку
+
+
+1.	git init 						=> создание локального репозитория
+2.	git branch						=> List all of the branches in your repo 
+3.	git branch <branch>				=> создается  <branch> , остаешься в текущем 
+4.	git checkout -b <branch>		=> создание и переход на новую ветку <branch>
+5.	git checkout <branch>  			=> переход на ветку <branch>
+6.	git add .						=> добавление файлов в коммит
+7.	git commit -m "имя_коммита"		=> сохранение коммита
+8.	git remote -v					=> просмотреть адреса для чтения и записи, привязанные к репозиторию
+9.	git remote add shortname URL	=> добавить ext репозиторий URL и дать ему имя (shortname)
+10.	git remote show 				=> просмотр ext репозиториев
+11.	git remote show <remote>		=> просмотр ext репозитория
+12.	git remote rename pb paul		=> переименование ext репозитория pb в paul
+13.	git remote remove paul			=> удаление ext репозитория paul
+14. git pull remote branch			=> получить в лок. ветку с ext репозитория remote ветку branch
+14. git push remote-name branch		=> залить branch на удаленную ветку remote-name !!!
+15. git push remote-name			=> залить все int branch на удаленную ветку remote-name !!!
+16. git clone <repo url>			=> создать локальный клон ext репозитория
+
+
+
+
+
+
+
+
+
+
+
+
