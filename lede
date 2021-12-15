@@ -1,0 +1,69 @@
+https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm
+lede-17.01.1-x86-generic-combined-ext4.img
+
+VBoxManage convertfromraw --format VDI lede-17.01.1-x86-generic-combined-ext4.img openwrt.vdi
+
+
+VBoxManage convertfromraw --format VDI lede-17.01.4-x86-generic-combined-ext4.img openwrt.vdi
+
+http://linuxoidblog.blogspot.com/2017/06/4g-openwrt.html
+Это 4G-модем от Мегафон, который я разлочил для работы с любой сим-картой (я использую МТС) и 
+перевёл для работы в режиме Hilink. Что это значит? У подобных модемов может быть два режима работы - Stick и Hilink. 
+В первом случае модем работает как коммутируемый интерфейс, в котором как и в обычном модеме происходит дозвон 
+на определённый номер. В режиме Hilink модем работает как сетевая карта, и имеет встроенный роутер. 
+В идеале вы должны перепрошить ваш модем для работы в режиме Hilink, информацию об этом можно найти здесь. 
+Если у вас точно такой же модем как у меня - вам сюда. 
+Данный модем сам по себе работает на Линуксе, имеет встроенный роутер с DHCP-сервером и фаерволлом 
+(всё это можно отключить в его веб-интерфейсе). 
+Потому схема работы будет весьма простая: наш TP-Link будет получать IP-адрес от встроенного в модем роутера, 
+а также настройки DNS-серверов, и при этом расшаривать это подключение на все свои интерфейсы.
+
+Первым делом необходимо поставить LEDE. 
+
+
+
+
+
+
+
+
+usb-modeswitch
+kmod-usb-net-cdc-ether
+ После обновления в поле поиска находим поочерёдно пакеты usb-modeswitch 
+ (необходим для переключения модема в режим, собственно, модема, так как на многих 3G/4G модемах ещё встроен картридер) 
+ и kmod-usb-net-cdc-ether (как раз таки необходим для работы модема в режиме сетевой карты). 
+ Устанавливаем их и теперь уже подключаем модем.
+
+Модем сразу определится в системе как сетевой интерфейс, в моём случае как устройство eth2. 
+Переходим в "Network" - "Interfaces" и нажимаем на Add new interface... 
+Нужно добавить наш модем и расшарить с него сеть. 
+Имя интерфейса указываем USB, протокол DHCP, а интерфейсом Ethernet adapter: eth2. Нажимаем на Submit.
+В появившемся подключении выбираем Edit, переходим на вкладку Firewall settings и указываем для него зону Wan:
+
+mac clone
+
+Network->Interfaces->Wan Edit -> Advanced Settings -> Override MAC address
+10:FE:ED:59:CF:73
+
+mac to ip lan
+
+1) смотрим настройки DHCP 
+Network->Interfaces->LAN Edit -> DHCP Server -> Start & Limit
+2) Network -> DHCP and DNS -> внизу добавляем mac и ip_new 
+
+port wan to ip 
+
+Network->Firewall->Port Forwards
+
+noip 
+
+1)install 
+ddns-scripts
+ddns-scripts_no-ip_com
+luci-app-ddns
+luci-i18n-ddns-ru
+2)Services -> Dynamic DNS Edit 
+
+
+luci-ssl
+

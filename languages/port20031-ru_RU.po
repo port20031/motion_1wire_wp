@@ -1,0 +1,313 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Linux Motion\n"
+"POT-Creation-Date: 2015-12-20 23:44+0300\n"
+"PO-Revision-Date: 2015-12-20 23:44+0300\n"
+"Last-Translator: port20031 <port20031@yandex.ru>\n"
+"Language-Team: port20031@yandex.ru <port20031>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:49
+#: (20151202)/port20031_linux_motion.php:102
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:52
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:113
+#: ../port20031_motion/port20031_linux_motion.php:51
+#: ../port20031_motion/port20031_linux_motion.php:113
+#: port20031_linux_motion.php:51 port20031_linux_motion.php:113
+msgid "The temperature sensor "
+msgstr "Датчик температуры"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:49
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:52
+#: ../port20031_motion/port20031_linux_motion.php:51
+#: port20031_linux_motion.php:51
+msgid "is not set ."
+msgstr "не установлен ."
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:102
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:113
+#: ../port20031_motion/port20031_linux_motion.php:113
+#: port20031_linux_motion.php:113
+msgid "is broken ."
+msgstr "поврежден ."
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:104
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:115
+#: ../port20031_motion/port20031_linux_motion.php:115
+#: port20031_linux_motion.php:115
+msgid "Temperature Sensor "
+msgstr "Температура датчика"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:104
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:116
+#: ../port20031_motion/port20031_linux_motion.php:116
+#: port20031_linux_motion.php:116
+msgid " in "
+msgstr "в"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:430
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1020
+#: ../port20031_motion/port20031_linux_motion.php:1020
+#: port20031_linux_motion.php:1020
+msgid "Hacker?"
+msgstr "Хакер?"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:445
+msgid "Linux Motion Options"
+msgstr "Linux Motion Настройки"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:456
+msgid "Temperature sensor1:"
+msgstr "Температура датчика1:"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:462
+msgid "Temperature sensor2:"
+msgstr "Температура датчика2:"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:468
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1321
+#: ../port20031_motion/port20031_linux_motion.php:1325
+#: port20031_linux_motion.php:1325
+msgid "Path ownet.php:"
+msgstr "Путь к ownet.php:"
+
+#: ../port20031_motion (20151202)/port20031_linux_motion.php:477
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1177
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1416
+#: ../port20031_motion/port20031_linux_motion.php:1177
+#: ../port20031_motion/port20031_linux_motion.php:1416
+#: port20031_linux_motion.php:1177 port20031_linux_motion.php:1416
+msgid "Save Changes"
+msgstr "Сохранить это"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:972
+#: ../port20031_motion/port20031_linux_motion.php:972
+#: port20031_linux_motion.php:972
+msgid "Job is  created."
+msgstr "Расписание создано ."
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:980
+#: ../port20031_motion/port20031_linux_motion.php:980
+#: port20031_linux_motion.php:980
+msgid "Job is not created."
+msgstr "Расписание не установлено ."
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1154
+#: ../port20031_motion/port20031_linux_motion.php:1154
+#: port20031_linux_motion.php:1154
+msgid "Motion 1Wire WP Options"
+msgstr "Motion 1Wire WP  Настройки"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1156
+#: ../port20031_motion/port20031_linux_motion.php:1156
+#: port20031_linux_motion.php:1156
+msgid ""
+"Attention ! The button apply all keys and delete all schedules ( for test or "
+"by crash )."
+msgstr ""
+"Внимание ! Эта кнопка выключает все ключи и удаляет все расписания ( для "
+"теста или при авариях ) ."
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1163
+#: ../port20031_motion/port20031_linux_motion.php:1163
+#: port20031_linux_motion.php:1163
+msgid "Turn off everything"
+msgstr "Выключить все"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1183
+#: ../port20031_motion/port20031_linux_motion.php:1183
+#: port20031_linux_motion.php:1183
+msgid "Greate job : "
+msgstr "Создание расписания : "
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1192
+#: ../port20031_motion/port20031_linux_motion.php:1192
+#: port20031_linux_motion.php:1192
+msgid "Schedule :"
+msgstr "Расписание :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1198
+#: ../port20031_motion/port20031_linux_motion.php:1198
+#: port20031_linux_motion.php:1198
+msgid "Кеу :"
+msgstr "Ключ :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1200
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1221
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1242
+#: ../port20031_motion/port20031_linux_motion.php:1200
+#: ../port20031_motion/port20031_linux_motion.php:1221
+#: ../port20031_motion/port20031_linux_motion.php:1242
+#: port20031_linux_motion.php:1200 port20031_linux_motion.php:1221
+#: port20031_linux_motion.php:1242
+msgid "We must choose ..."
+msgstr "Вы должны выбрать ..."
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1219
+#: ../port20031_motion/port20031_linux_motion.php:1219
+#: port20031_linux_motion.php:1219
+msgid " Type job : "
+msgstr "Тип расписания : "
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1240
+#: ../port20031_motion/port20031_linux_motion.php:1240
+#: port20031_linux_motion.php:1240
+msgid " Temperature sensor : "
+msgstr "Температура датчика :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1263
+#: ../port20031_motion/port20031_linux_motion.php:1263
+#: port20031_linux_motion.php:1263
+msgid " Climat :"
+msgstr "Климат :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1268
+#: ../port20031_motion/port20031_linux_motion.php:1268
+#: port20031_linux_motion.php:1268
+msgid " Time 1:"
+msgstr "Время 1:"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1293
+#: ../port20031_motion/port20031_linux_motion.php:1293
+#: port20031_linux_motion.php:1293
+msgid " Time 2:"
+msgstr "Время 2:"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1328
+#: ../port20031_motion/port20031_linux_motion.php:1332
+#: port20031_linux_motion.php:1332
+msgid "Port ownet :"
+msgstr "Порт ownet :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1335
+#: ../port20031_motion/port20031_linux_motion.php:1339
+#: port20031_linux_motion.php:1339
+msgid "Temperature alarm sensor :"
+msgstr "Температура датчика охраны :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1349
+#: ../port20031_motion/port20031_linux_motion.php:1353
+#: port20031_linux_motion.php:1353
+msgid "You can choose..."
+msgstr "Вы можете выбрать ... "
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1379
+#: ../port20031_motion/port20031_linux_motion.php:1383
+#: port20031_linux_motion.php:1383
+msgid "Email notification :"
+msgstr "Email оповещения :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1386
+#: ../port20031_motion/port20031_linux_motion.php:1390
+#: port20031_linux_motion.php:1390
+msgid "Email header :"
+msgstr "Email Заголовок : "
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1393
+#: ../port20031_motion/port20031_linux_motion.php:1397
+#: port20031_linux_motion.php:1397
+msgid "Text of the letter :"
+msgstr "Текст оповещения :"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1400
+#: ../port20031_motion/port20031_linux_motion.php:1320
+#: port20031_linux_motion.php:1320
+msgid "Activation of protection : "
+msgstr "Активация режима охраны "
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1423
+#: ../port20031_motion/port20031_linux_motion.php:1423
+#: port20031_linux_motion.php:1423
+msgid "Types of devices (id-types of devices):"
+msgstr "Типы устройств ( номер - тип устройства ):"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1436
+#: ../port20031_motion/port20031_linux_motion.php:1436
+#: port20031_linux_motion.php:1436
+msgid "Description devices(id key=>name key=>id types of devices):"
+msgstr "Описание устройств(id key=>name key=>id types of devices):"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1449
+#: ../port20031_motion/port20031_linux_motion.php:1449
+#: port20031_linux_motion.php:1449
+msgid "List of schedules."
+msgstr "Список расписаний ."
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1470
+#: ../port20031_motion/port20031_linux_motion.php:1470
+#: port20031_linux_motion.php:1470
+msgid "Status keys(id key=>program state=>real state):"
+msgstr "Статус ключей(id key=>program state=>real state):"
+
+#: ../motion_1wire/port20031_motion/port20031_linux_motion.php:1486
+#: ../port20031_motion/port20031_linux_motion.php:1486
+#: port20031_linux_motion.php:1486
+msgid ""
+"\n"
+"Attention ! To create a schedule, you must be sure to:<br>\n"
+"- Select the checkbox to create a schedule;<br>\n"
+"- Complete the timetable (8-digit number - so it  will always be executed;"
+"<br>\n"
+"&nbsp;&nbsp; 7 and less digit -number  - it will be executed once; <br>\n"
+"&nbsp;&nbsp; if the number is greater than 0 - is performed on the "
+"corresponding day of the week <br>\n"
+"&nbsp;&nbsp; (for example - 11100010 every Monday, Tuesday and Saturday));"
+"<br>\n"
+"- Select the key;<br>\n"
+"- Select the type of operation mode;<br>\n"
+"- Select the temperature sensor;<br>\n"
+"- Fill in the climate <br>\n"
+"&nbsp;&nbsp;(on-off - will not affect, autostop - in how many minutes will "
+"turn off ,<br>\n"
+"&nbsp;&nbsp;in the other modes the temperature level sensor);<br>\n"
+"- Time  2 must be greater than or equal to Time 1 and time fields located "
+"during one day <br>\n"
+"&nbsp;&nbsp;(on-off and climat - no effect, autostop - Time 1 is only "
+"used  , <br>\n"
+"&nbsp;&nbsp;timer and climat + timer - the time range in one day).\n"
+msgstr ""
+"\n"
+"Внимание ! Для создания расписания необходимо обязательно :<br>\n"
+"- выбрать чек-бокс создания расписания ;<br>\n"
+"- заполнить расписание ( 8 значное число - значит будет выполняться всегда , "
+"<br>\n"
+"&nbsp;&nbsp;7 и меньше значное - выполнится 1 раз  ; <br>\n"
+"&nbsp;&nbsp;если цифра больше 0 - выполняется в соответствующий день недели "
+"<br>\n"
+"&nbsp;&nbsp;(на пример - 11100010 каждый понедельник ,вторник и суббота)) ;"
+"<br>\n"
+"- выбрать ключ ;<br>\n"
+"- выбрать тип работы режима ;<br>\n"
+"- выбрать температурный датчик ;<br>\n"
+"- заполнить поле климат <br>\n"
+"&nbsp;&nbsp;( on-off  - не влияет , autostop   - через сколько минут "
+"выключится ,<br>\n"
+"&nbsp;&nbsp;в остальных режимах уровень температуры датчика ) ;<br>\n"
+"- поля времени 2 должны быть больше или равно полям времени 1 и находится в "
+"течении одного дня <br>\n"
+"&nbsp;&nbsp;( on-off  и climat  - не влияет , autostop   -  используются "
+"только поля времени 1 , <br>\n"
+"&nbsp;&nbsp;timer  и climat+timer  - диапазон времени в одном дне ).<br>\n"
+
+#~ msgid "Temperature Sensor is not set ."
+#~ msgstr "Температурный  датчик не установлен."
+
+#~ msgid "The temperature sensor is broken."
+#~ msgstr "Температурный  датчик поврежден ."
+
+#~ msgid "Already have such a table !!!!!"
+#~ msgstr "Уже есть таблица !!!!!"
+
+#~ msgid "port20031 Settings"
+#~ msgstr "port20031 Настройки"
