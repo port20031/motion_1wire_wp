@@ -32,7 +32,7 @@ git push origin имя_ветки залить изминения на удал�
 
 git remote add pmotion https://github.com/port20031/motion_1wire_wp.git
 
-
+git push pmotion
 
 
 
