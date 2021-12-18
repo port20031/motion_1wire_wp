@@ -27,9 +27,10 @@ git push origin имя_ветки залить изминения на удал�
 14. git push remote-name branch		=> залить branch на удаленную ветку remote-name !!!
 15. git push remote-name			=> залить все int branch на удаленную ветку remote-name !!!
 16. git clone <repo url>			=> создать локальный клон ext репозитория
+17.	git status						=> на какой ветке находимся
 
 
-
+git remote add pmotion https://github.com/port20031/motion_1wire_wp.git
 
 
 
